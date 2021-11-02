@@ -1,5 +1,7 @@
 const Web3 = require("web3");
 
+require('dotenv').config()
+infuraToken = process.env.INFURA_TOKEN
 const rpcURL = "https://ropsten.infura.io/v3/95c684c7f8544c01aa9b659ae25db403";
 const web3 = new Web3(rpcURL);
 console.log("Connected to web3");
