@@ -285,7 +285,7 @@ const transferToken = async(toAccount, amount) => {
 
     const txObject = { 
         nonce: web3.utils.toHex(txCount),
-        gasLimit: web3.utils.toHex(5000000),
+        gasLimit: web3.utils.toHex(30000),
         gasPrice: web3.utils.toHex(web3.utils.toWei('100', 'gwei')),
         to: contractAddress,
         data: contract.methods.transfer(toAccount, amount).encodeABI()
