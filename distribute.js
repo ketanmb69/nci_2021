@@ -31,7 +31,7 @@ const distribute = async() => {
     console.log(`distro addresses are: ${ distributionAddresses}`);
 
     // get the balance of the token owner
-    let ownerBalance = await contract.getBalanceOfAccount(ownerAddress);
+    let ownerBalance = await contract.getBalance(ownerAddress);
     let ob = new BigNumber(ownerBalance);
     console.log(`owner balance is ${ob}`);
 

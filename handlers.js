@@ -7,7 +7,7 @@
 // if there's time, let's add a docker container
 
 let contract = require("./contract.js");
-let method = require("./method.js");
+let method = require("./method2.js");
 let distribute = require('./distribute.js');
 
 const express = require("express");
@@ -30,6 +30,7 @@ app.post('/transfer', async(req, res) => {
 })
 
 app.get('/distribute', async(req, res) => {
-    res.send(await distribute.distribute());
+   res.send(await distribute.distribute());
 })
+
 app.listen(port, () => console.log(`listening on port ${port}...`));
