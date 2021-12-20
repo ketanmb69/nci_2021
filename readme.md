@@ -49,33 +49,31 @@ make your changes
 then run the following commands:
 
 ## add all the files to the git
-```$git add contract.js```
-```$git add method.js```
-```$git add distribute.js```
-```$git add handlers.js```
-```$git add ozERC20.sol```
-```$git add package.json```
-```$git add package-lock.json```
-```$git add Dockerfile```
-```$git add accounts.txt```
+```git add contract.js```
+```git add method.js```
+```git add distribute.js```
+```git add handlers.js```
+```git add ozERC20.sol```
+```git add package.json```
+```git add package-lock.json```
+```git add Dockerfile```
+```git add accounts.txt```
+or
+```git add .```
 
 ## commit the git statement
-```$git commit -m "Added all the files in my git repository"```
+```git commit -m "Added all the files in my git repository"```
 
 ## to push the files on a git
-```$git push origin main```
+```git push origin main```
 
 ## Executing a .JS file ##
 
-```$node handlers.js```
+```node handlers.js```
 
 ## Dependencies and NPM ##
 
-We want to use large chunks of code that others have written to interact with Ethereum, like the web3 package.  Do this, we need to set up the Node Package Manager (npm).
-
-From inside your folder, to create your own package.json:
-
-```$npm init```
+```npm init```
 
 ## Few packages needed for this contract deployment that we need to install.
 ## install using npm
@@ -106,11 +104,11 @@ npm install express
 
 ### build a docker container ###
 
-```docker build -t nci/lab2021 .```
+```docker build -t kb/blockchain2021 .```
 
 ### run the image ###
 
-```docker run -p 8090:8080 --name nci -d nci/lab2021```
+```docker run -p 8090:8080 --name nci -d kb/blockchain2021```
 
 ### kill a running container ###
 ```docker kill nci```
@@ -123,3 +121,21 @@ npm install express
 
 ### view logs inside a container ###
 ```docker logs -f nci```
+
+### view all docker images ###
+```docker image ls -a ```
+
+### to clear the docker system ###
+```docker system prune -f```
+
+### to check the logs on localhost server ###
+```curl http://localhost:8090/distribute```
+
+## Automated application to run and deploy using docker-compose
+## only use below command to run and deploy the contract.
+```docker-compose run```
+
+## push the image to the docker hub account
+
+```docker tag ketan-blockchain-project ketanbadhe/ketan-blockchain-project```
+```docker push ketanbadhe/ketan-blockchain-project```
